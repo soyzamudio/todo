@@ -1,13 +1,22 @@
 extends ../../layouts/master
 block content
-  h3.page-header Create User
-  
-  form(method='get', action='/login/authenticate')
-    .form-group
-      label(for='email') Email
-      input#email.form-control(type='email', name='email', autofocus=true)
-    .form-group
-      label(for='password') Password
-      input(type='password', name='password')
-    .form-group
-      button.btn.btn-success(type='submit') Login
+  .col-md-4
+  .col-md-4
+    .col-md-12
+      form#msform(method='post', action='/users/authenticate')
+        fieldset
+          .page-header
+            h3 Log In
+          .input-group.input-group-md
+            span.input-group-addon: i.fa.fa-male
+            input.form-control(type='text', name='email', placeholder='Email', autofocus=true)
+          br
+          .input-group.input-group-md
+            span.input-group-addon: i.fa.fa-lock
+            input.form-control(type='password', name='password', placeholder='Password')
+          br
+          .col-md-6.text-left
+            button.btn.btn-primary Log In
+          .col-md-6.text-right
+            a.btn.btn-default(href='/register') Create Account
+  .col-md-4

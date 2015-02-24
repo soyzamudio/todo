@@ -5,6 +5,10 @@ module.exports = {
     mode: 'try'
   },
   handler: function(request, reply) {
-    reply.view('templates/general/home');
+    if (!request.auth.credentials) {
+      reply.view('templates/users/login')
+    } else {
+      reply.view('templates/general/home');
+    }
   }
 };
