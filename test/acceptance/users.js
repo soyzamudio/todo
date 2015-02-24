@@ -48,7 +48,7 @@ describe('user route', function() {
   });
 
   describe('get /users', function() {
-    it('should NOT create a new user', function(done) {
+    it('should NOT create a new user - wrong email', function(done) {
       var options = {
         method:'post',
         url:'/users',
@@ -66,7 +66,7 @@ describe('user route', function() {
   });
 
   describe('get /users', function() {
-    it('should NOT create a new user', function(done) {
+    it('should NOT create a new user - empty email', function(done) {
       var options = {
         method:'post',
         url:'/users',
@@ -83,7 +83,7 @@ describe('user route', function() {
   });
 
   describe('get /users', function() {
-    it('should NOT create a new user', function(done) {
+    it('should NOT create a new user - empty password', function(done) {
       var options = {
         method:'post',
         url:'/users',
