@@ -1,3 +1,13 @@
 extends ../../layouts/master
 block content
   h1 Items
+    a.btn.btn-info(href='/items/new') Add New Item
+  ul
+    each item in items
+        p= item.title
+        p= 'Priority: ' + item.priority
+        p= 'Tags: ' + item.tags
+        if item.isCompleted
+          p Completed: completed
+        else
+          p Completed: not completed

@@ -24,7 +24,6 @@ module.exports = {
     item.userId = request.auth.credentials._id;
     item.tags = tags;
     item.save(function() {
-      console.log('Post save', item);
       reply.redirect('/items');
     });
   }

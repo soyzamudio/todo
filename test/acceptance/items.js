@@ -146,5 +146,214 @@ describe('items route', function() {
 
   });
 
+  describe('get /items', function() {
+    it('should get the items', function(done) {
+      var options = {
+        method:'get',
+        url:'/items',
+        headers: {
+          cookie: cookie
+        }
+      };
+      server.inject(options, function(response) {
+        expect(response.statusCode).to.equal(200);
+        done();
+      });
+    });
+
+    it('should get the items and filter by priority', function(done) {
+      var options = {
+        method:'get',
+        url:'/items?priority=high',
+        headers: {
+          cookie: cookie
+        }
+      };
+      server.inject(options, function(response) {
+        expect(response.statusCode).to.equal(200);
+        expect(response.payload).to.include('Priority: high');
+        expect(response.payload).to.not.include('Priority: medium');
+        expect(response.payload).to.not.include('Priority: low');
+        done();
+      });
+    });
+
+    it('should get the items and filter by tags', function(done) {
+      var options = {
+        method:'get',
+        url:'/items?tags=orcs',
+        headers: {
+          cookie: cookie
+        }
+      };
+      server.inject(options, function(response) {
+        expect(response.statusCode).to.equal(200);
+        expect(response.payload).to.include('orcs');
+        done();
+      });
+    });
+
+    it('should get the items and filter by isCompleted', function(done) {
+      var options = {
+        method:'get',
+        url:'/items?isCompleted=false',
+        headers: {
+          cookie: cookie
+        }
+      };
+      server.inject(options, function(response) {
+        expect(response.statusCode).to.equal(200);
+        expect(response.payload).to.include('Completed: not completed');
+        expect(response.payload).to.not.include('Completed: completed');
+        done();
+      });
+    });
+
+    it('should get the items and sort by dueDate and limit 1', function(done) {
+      var options = {
+        method:'get',
+        url:'/items?sort=dueDate&limit=1',
+        headers: {
+          cookie: cookie
+        }
+      };
+      server.inject(options, function(response) {
+        expect(response.statusCode).to.equal(200);
+        expect(response.payload).to.include('Get ring to Mount Doom');
+        expect(response.payload).to.not.include('Not kill Gollum');
+        done();
+      });
+    });
+
+    it('should get the items and sort by -dueDate and limit 1', function(done) {
+      var options = {
+        method:'get',
+        url:'/items?sort=-dueDate&limit=1',
+        headers: {
+          cookie: cookie
+        }
+      };
+      server.inject(options, function(response) {
+        expect(response.statusCode).to.equal(200);
+        expect(response.payload).to.not.include('Get ring to Mount Doom');
+        done();
+      });
+    });-
+
+    it('should get the items and sort by priority and limit 1', function(done) {
+      var options = {
+        method:'get',
+        url:'/items?sort=priority&limit=1',
+        headers: {
+          cookie: cookie
+        }
+      };
+      server.inject(options, function(response) {
+        expect(response.statusCode).to.equal(200);
+        expect(response.payload).to.include('Priority: high');
+        expect(response.payload).to.not.include('Priority: medium');
+        expect(response.payload).to.not.include('Priority: low');
+        done();
+      });
+    });
+
+    it('should get the items and sort by -priority and limit 1', function(done) {
+      var options = {
+        method:'get',
+        url:'/items?sort=-priority&limit=1',
+        headers: {
+          cookie: cookie
+        }
+      };
+      server.inject(options, function(response) {
+        expect(response.statusCode).to.equal(200);
+        expect(response.payload).to.not.include('Priority: high');
+        expect(response.payload).to.include('Priority: medium');
+        expect(response.payload).to.not.include('Priority: low');
+        done();
+      });
+    });
+
+    it('should get the items and sort by -isCompleted and limit 1', function(done) {
+      var options = {
+        method:'get',
+        url:'/items?sort=-isCompleted&limit=1',
+        headers: {
+          cookie: cookie
+        }
+      };
+      server.inject(options, function(response) {
+        expect(response.statusCode).to.equal(200);
+        expect(response.payload).to.not.include('Completed: not completed');
+        expect(response.payload).to.include('Completed: completed');
+        done();
+      });
+    });
+
+    it('should get the items and sort by isCompleted and limit 1', function(done) {
+      var options = {
+        method:'get',
+        url:'/items?sort=isCompleted&limit=1',
+        headers: {
+          cookie: cookie
+        }
+      };
+      server.inject(options, function(response) {
+        expect(response.statusCode).to.equal(200);
+        expect(response.payload).to.include('Completed: not completed');
+        expect(response.payload).to.not.include('Completed: completed');
+        done();
+      });
+    });
+
+    it('should get the items and push it to the limit and skip to first page', function(done) {
+      var options = {
+        method:'get',
+        url:'/items?sort=dueDate&limit=1&page=1',
+        headers: {
+          cookie: cookie
+        }
+      };
+      server.inject(options, function(response) {
+        expect(response.statusCode).to.equal(200);
+        expect(response.payload).to.not.include('Not kill Gollum');
+        expect(response.payload).to.include('Get ring to Mount Doom');
+        done();
+      });
+    });
+
+    it('should get the items and push it to the limit and skip to second page', function(done) {
+      var options = {
+        method:'get',
+        url:'/items?sort=dueDate&limit=1&page=2',
+        headers: {
+          cookie: cookie
+        }
+      };
+      server.inject(options, function(response) {
+        expect(response.statusCode).to.equal(200);
+        expect(response.payload).to.include('Not kill Gollum');
+        expect(response.payload).to.not.include('Get ring to Mount Doom');
+        done();
+      });
+    });
+
+    it('should get the items and push it to the limit and skip to third page', function(done) {
+      var options = {
+        method:'get',
+        url:'/items?sort=dueDate&limit=1&page=3',
+        headers: {
+          cookie: cookie
+        }
+      };
+      server.inject(options, function(response) {
+        expect(response.statusCode).to.equal(200);
+        expect(response.payload).to.include('Enjoy the harvest festival');
+        expect(response.payload).to.not.include('Get ring to Mount Doom');
+        done();
+      });
+    });
+
+  });
 
 });

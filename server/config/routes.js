@@ -12,5 +12,6 @@ module.exports = [
 
   {method: 'get', path: '/items', config: require('../routes/items/index')},
   {method: 'get', path: '/items/new', config: require('../routes/items/new')},
-  {method: 'post', path: '/items/create', config: require('../routes/items/create')}
+  {method: 'post', path: '/items/create', config: require('../routes/items/create')},
+  {method: 'post', path: '/items/{itemId}/completed', config: require('../routes/items/completed')}
 ];

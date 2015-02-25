@@ -6,7 +6,50 @@
       "isCompleted" : false,
       "tags" : [
           "ring",
-          "epic"
+          "epic",
+          "unique"
+      ],
+      "priority" : "low",
+      "createdAt" : {"$date": 1424828111020},
+      "dueDate" : {"$date": 1424828111010},
+      "__v" : 0
+  },
+  {
+      "_id" : {"$oid":"0000000000000000000000b1"},
+      "title" : "Not kill Gollum",
+      "userId" : {"$oid":"000000000000000000000001"},
+      "isCompleted" : true,
+      "tags" : [
+          "smeagol",
+          "master"
+      ],
+      "priority" : "low",
+      "createdAt" : {"$date": 1424828111020},
+      "dueDate" : {"$date": 1424828111011},
+      "__v" : 0
+  },
+  {
+      "_id" : {"$oid":"0000000000000000000000c1"},
+      "title" : "Enjoy the harvest festival",
+      "userId" : {"$oid":"000000000000000000000001"},
+      "isCompleted" : false,
+      "tags" : [
+          "Shire",
+          "farm"
+      ],
+      "priority" : "medium",
+      "createdAt" : {"$date": 1424828111020},
+      "dueDate" : {"$date": 1424828111012},
+      "__v" : 0
+  },
+  {
+      "_id" : {"$oid":"0000000000000000000000d1"},
+      "title" : "Traverse the mines of Moria",
+      "userId" : {"$oid":"000000000000000000000001"},
+      "isCompleted" : false,
+      "tags" : [
+          "orcs",
+          "gandalf"
       ],
       "priority" : "high",
       "createdAt" : {"$date": 1424828111020},
@@ -14,15 +57,239 @@
       "__v" : 0
   },
   {
-      "_id" : {"$oid":"0000000000000000000000b1"},
-      "title" : "Not kill Gollum",
-      "userId" : {"$oid":"000000000000000000000002"},
-      "isCompleted" : true,
+      "_id" : {"$oid":"0000000000000000000000e1"},
+      "title" : "Defeat the Balrog",
+      "userId" : {"$oid":"000000000000000000000001"},
+      "isCompleted" : false,
       "tags" : [
-          "smeagol",
-          "master"
+          "balrog",
+          "gandalf"
+      ],
+      "priority" : "medium",
+      "createdAt" : {"$date": 1424828111020},
+      "dueDate" : {"$date": 1424828111020},
+      "__v" : 0
+  },
+  {
+      "_id" : {"$oid":"0000000000000000000000f1"},
+      "title" : "Run, Fools",
+      "userId" : {"$oid":"000000000000000000000001"},
+      "isCompleted" : false,
+      "tags" : [
+          "gandalf",
+          "balrog"
+      ],
+      "priority" : "high",
+      "createdAt" : {"$date": 1424828111020},
+      "dueDate" : {"$date": 1424828111020},
+      "__v" : 0
+  },
+  {
+      "_id" : {"$oid":"0000000000000000000001a1"},
+      "title" : "Complete Gollum's riddle",
+      "userId" : {"$oid":"000000000000000000000001"},
+      "isCompleted" : false,
+      "tags" : [
+          "gollum",
+          "precious"
       ],
       "priority" : "low",
+      "createdAt" : {"$date": 1424828111020},
+      "dueDate" : {"$date": 1424828111020},
+      "__v" : 0
+  },
+  {
+      "_id" : {"$oid":"0000000000000000000001b1"},
+      "title" : "Gather the fellowship",
+      "userId" : {"$oid":"000000000000000000000001"},
+      "isCompleted" : false,
+      "tags" : [
+          "elves",
+          "gathering"
+      ],
+      "priority" : "medium",
+      "createdAt" : {"$date": 1424828111020},
+      "dueDate" : {"$date": 1424828111020},
+      "__v" : 0
+  },
+  {
+      "_id" : {"$oid":"0000000000000000000001c1"},
+      "title" : "Walk into Mordor",
+      "userId" : {"$oid":"000000000000000000000001"},
+      "isCompleted" : true,
+      "tags" : [
+          "mordor",
+          "sauron"
+      ],
+      "priority" : "medium",
+      "createdAt" : {"$date": 1424828111020},
+      "dueDate" : {"$date": 1424828111020},
+      "__v" : 0
+  },
+  {
+      "_id" : {"$oid":"0000000000000000000001d1"},
+      "title" : "Hide from the eye of Sauron",
+      "userId" : {"$oid":"000000000000000000000001"},
+      "isCompleted" : false,
+      "tags" : [
+          "sauron",
+          "ring"
+      ],
+      "priority" : "low",
+      "createdAt" : {"$date": 1424828111020},
+      "dueDate" : {"$date": 1424828111020},
+      "__v" : 0
+  },
+  {
+      "_id" : {"$oid":"0000000000000000000001e1"},
+      "title" : "Restore the throne of Gondor",
+      "userId" : {"$oid":"000000000000000000000001"},
+      "isCompleted" : false,
+      "tags" : [
+          "gondor",
+          "restore"
+      ],
+      "priority" : "low",
+      "createdAt" : {"$date": 1424828111020},
+      "dueDate" : {"$date": 1424828111020},
+      "__v" : 0
+  },
+  {
+      "_id" : {"$oid":"0000000000000000000001f1"},
+      "title" : "Defend Minas Tirith",
+      "userId" : {"$oid":"000000000000000000000001"},
+      "isCompleted" : false,
+      "tags" : [
+          "orcs",
+          "gandalf"
+      ],
+      "priority" : "high",
+      "createdAt" : {"$date": 1424828111020},
+      "dueDate" : {"$date": 1424828111020},
+      "__v" : 0
+  },
+  {
+      "_id" : {"$oid":"0000000000000000000000a2"},
+      "title" : "a",
+      "userId" : {"$oid":"000000000000000000000001"},
+      "isCompleted" : false,
+      "tags" : [
+          "orcs",
+          "gandalf"
+      ],
+      "priority" : "low",
+      "createdAt" : {"$date": 1424828111020},
+      "dueDate" : {"$date": 1424828111020},
+      "__v" : 0
+  },
+  {
+      "_id" : {"$oid":"0000000000000000000000b2"},
+      "title" : "b",
+      "userId" : {"$oid":"000000000000000000000001"},
+      "isCompleted" : true,
+      "tags" : [
+          "orcs",
+          "gandalf"
+      ],
+      "priority" : "high",
+      "createdAt" : {"$date": 1424828111020},
+      "dueDate" : {"$date": 1424828111020},
+      "__v" : 0
+  },
+  {
+      "_id" : {"$oid":"0000000000000000000000c2"},
+      "title" : "c",
+      "userId" : {"$oid":"000000000000000000000001"},
+      "isCompleted" : false,
+      "tags" : [
+          "orcs",
+          "gandalf"
+      ],
+      "priority" : "medium",
+      "createdAt" : {"$date": 1424828111020},
+      "dueDate" : {"$date": 1424828111020},
+      "__v" : 0
+  },
+  {
+      "_id" : {"$oid":"0000000000000000000000d2"},
+      "title" : "d",
+      "userId" : {"$oid":"000000000000000000000001"},
+      "isCompleted" : false,
+      "tags" : [
+          "ring",
+          "gandalf"
+      ],
+      "priority" : "high",
+      "createdAt" : {"$date": 1424828111020},
+      "dueDate" : {"$date": 1424828111020},
+      "__v" : 0
+  },
+  {
+      "_id" : {"$oid":"0000000000000000000000e2"},
+      "title" : "e",
+      "userId" : {"$oid":"000000000000000000000001"},
+      "isCompleted" : false,
+      "tags" : [
+          "shire",
+          "blahblah"
+      ],
+      "priority" : "high",
+      "createdAt" : {"$date": 1424828111020},
+      "dueDate" : {"$date": 1424828111020},
+      "__v" : 0
+  },
+  {
+      "_id" : {"$oid":"0000000000000000000000f2"},
+      "title" : "f",
+      "userId" : {"$oid":"000000000000000000000001"},
+      "isCompleted" : false,
+      "tags" : [
+          "shire",
+          "blahblah"
+      ],
+      "priority" : "high",
+      "createdAt" : {"$date": 1424828111020},
+      "dueDate" : {"$date": 1424828111020},
+      "__v" : 0
+  },
+  {
+      "_id" : {"$oid":"0000000000000000000000a3"},
+      "title" : "activate the String",
+      "userId" : {"$oid":"000000000000000000000001"},
+      "isCompleted" : false,
+      "tags" : [
+          "shire",
+          "orcs"
+      ],
+      "priority" : "high",
+      "createdAt" : {"$date": 1424828111020},
+      "dueDate" : {"$date": 1424828111020},
+      "__v" : 0
+  },
+  {
+      "_id" : {"$oid":"0000000000000000000000b3"},
+      "title" : "make peace with the elves",
+      "userId" : {"$oid":"000000000000000000000001"},
+      "isCompleted" : false,
+      "tags" : [
+          "shire",
+          "elves"
+      ],
+      "priority" : "medium",
+      "createdAt" : {"$date": 1424828111020},
+      "dueDate" : {"$date": 1424828111020},
+      "__v" : 0
+  },
+  {
+      "_id" : {"$oid":"0000000000000000000000c3"},
+      "title" : "Sound the horn of Gondor",
+      "userId" : {"$oid":"000000000000000000000001"},
+      "isCompleted" : false,
+      "tags" : [
+          "fellowship",
+          "gondor"
+      ],
+      "priority" : "high",
       "createdAt" : {"$date": 1424828111020},
       "dueDate" : {"$date": 1424828111020},
       "__v" : 0
