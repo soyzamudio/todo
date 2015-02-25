@@ -1,0 +1,14 @@
+{
+    "_id" : {"$oid":"000000000000000000000001"},
+    "email" : "bilbo@theShire.com",
+    "password" : "$2a$08$gVOZ73AC6bWNh.EkeLpileX0bd1F8bBZxOQjnXYl1PmjyYt9/4oTK",
+    "createdAt" : {"$date": 1424828111020},
+    "__v" : 0
+}
+{
+    "_id" : {"$oid":"000000000000000000000002"},
+    "email" : "samWise@theShire.com",
+    "password" : "$2a$08$gVOZ73AC6bWNh.EkeLpileX0bd1F8bBZxOQjnXYl1PmjyYt9/4oTK",
+    "createdAt" : {"$date": 1424828111022},
+    "__v" : 0
+}

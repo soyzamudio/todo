@@ -9,12 +9,13 @@ var describe = lab.describe;
 var it = lab.it;
 var beforeEach = lab.beforeEach;
 var server = require('../../server/index');
+var cp = require('child_process')
+var dbname = process.env.MONGO_URL.split('/')[3];
 
 describe('user route', function() {
   beforeEach(function(done) {
-    User.remove(function() {
-      var user = new User({email: 'bilbo@theShire.com', password: '123'});
-      User.register(user, done);
+    cp.execFile(__dirname + '/../scripts/clean-db.sh', [dbname], {cwd: __dirname + '/../scripts'}, function(err, stdout, stderr) {
+      done();
     });
   });
 
@@ -66,7 +67,7 @@ describe('user route', function() {
   });
 
   describe('get /users', function() {
-    it('should NOT create a new user - empty email', function(done) {
+    it('should NOT create a new user - no email', function(done) {
       var options = {
         method:'post',
         url:'/users',
@@ -83,7 +84,7 @@ describe('user route', function() {
   });
 
   describe('get /users', function() {
-    it('should NOT create a new user - empty password', function(done) {
+    it('should NOT create a new user - no password', function(done) {
       var options = {
         method:'post',
         url:'/users',
@@ -107,7 +108,7 @@ describe('user route', function() {
       };
       server.inject(options, function(response) {
         expect(response.statusCode).to.equal(200);
-        expect(response.payload).to.include('Log In');
+        expect(response.payload).to.include('Login');
         done();
       });
     });
