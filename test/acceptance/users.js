@@ -48,7 +48,7 @@ describe('user route', function() {
   });
 
   describe('get /users', function() {
-    it('should NOT create a new user - wrong email', function(done) {
+    it('should NOT create a new user - wrong user', function(done) {
       var options = {
         method:'post',
         url:'/users',
@@ -107,7 +107,7 @@ describe('user route', function() {
       };
       server.inject(options, function(response) {
         expect(response.statusCode).to.equal(200);
-        expect(response.payload).to.include('Login');
+        expect(response.payload).to.include('Log In');
         done();
       });
     });

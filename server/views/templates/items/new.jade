@@ -1,0 +1,23 @@
+extends ../../layouts/master
+block content
+  h3.page-header Add New Item
+  
+  form(method='post', action='/items/create')
+    .form-group
+      label(for='title') Title
+      input#title.form-control(type='text', name='title', placeholder='Title', autofocus=true)
+    .form-group
+      label(for='dueDate') Due Date
+      input#dueDate.form-control(type='date', name='dueDate', placeholder='Due Date')
+    .form-group
+      label(for='tags') Tags
+      input#tags.form-control(type='text', name='tags', placeholder='Tags')
+    .form-group
+      label(for='tags') Priority
+      select#priority.form-control(name='priority', placeholder='Priority')
+        option(value='') Select a Priority
+        option High
+        option Medium
+        option Low
+    .form-group
+      button.btn.btn-success(type='submit') New Item
