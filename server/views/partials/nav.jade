@@ -10,7 +10,7 @@ if email
         a.navbar-brand(href='/') ToDoDo.
       #navbar.collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right
-          li: a(href='#')= email
+          li: a(href='#'): strong= email
           li: a(href='/'): i.fa.fa-home &nbsp; Home
           form.navbar-form.navbar-left(method='post', action='/logout')
             button.btn.btn-default: i.fa.fa-sign-out &nbsp; Log Out

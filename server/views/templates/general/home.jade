@@ -1,3 +1,12 @@
 extends ../../layouts/master
 block content
-  h3 Home
+  .col-md-2
+  .col-md-8
+    .col-md-12.input-area
+        form.form-inline
+          .form-group.input-group.input-group-md(style="width: 100%;")
+            input#item-form.form-control(type='text', name='title', placeholder='Item to add', style='width: 65%')
+            input#tags-form.form-control(type='text', name='tags', placeholder='Comma separated tags', style='width: 35%')
+            div.input-group-btn
+              button#add-to-list.btn.btn-default.form-control: i.fa.fa-pencil-square-o
+  .col-md-2
