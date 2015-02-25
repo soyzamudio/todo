@@ -1,6 +1,6 @@
 if email
-  nav.navbar.navbar-default
-    .container-fluid
+  nav.navbar.navbar-inverse
+    .container
       .navbar-header
         button.navbar-toggle.collapsed(data-toggle="collapse", data-target="#navbar")
           span.sr-only Toggle navigation
@@ -10,7 +10,7 @@ if email
         a.navbar-brand(href='/') ToDoDo.
       #navbar.collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right
-          li: a(href='/'): i.fa.fa-home &nbsp; Home
           li: a(href='#')= email
+          li: a(href='/'): i.fa.fa-home &nbsp; Home
           form.navbar-form.navbar-left(method='post', action='/logout')
-            button.btn.btn-default Log Out
+            button.btn.btn-default: i.fa.fa-sign-out &nbsp; Log Out
