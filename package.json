@@ -1,7 +1,7 @@
 {
   "name": "toDo",
-  "description": "Hapi Prototype Application",
-  "homepage": "https://github.com/coding-house-jan2015/hapi-prototype",
+  "description": "To Do Application",
+  "homepage": "https://github.com/soyzamudio/todo",
   "engines": {
     "node": "0.12.x"
   },
@@ -15,10 +15,10 @@
     "mongo",
     "mongoose"
   ],
-  "author": "MJ & Jose <mjosephvp@gmail.com>",
+  "author": "Jose Zamudio <jose@josezamudio.me>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/coding-house-jan2015/hapi-prototype.git"
+    "url": "git://github.com/soyzamudio/todo.git"
   },
   "version": "1.0.0",
   "scripts": {
