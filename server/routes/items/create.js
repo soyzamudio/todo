@@ -24,7 +24,7 @@ module.exports = {
     item.userId = request.auth.credentials._id;
     item.tags = tags;
     item.save(function() {
-      reply.redirect('/items');
+      reply.redirect('/');
     });
   }
 };

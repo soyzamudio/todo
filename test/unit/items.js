@@ -27,7 +27,7 @@ describe('Item', function() {
       tags = tags.split(',');
       tags = tags.map(function(e) {
         return _.kebabCase(e.toLowerCase());
-      })
+      });
       User.findOne({email: 'bilbo@theShire.com'}, function(err, user) {
         var item = new Item({title: 'Get ring to Mount Doom', dueDate: Date.now, tags: tags, priority: 'high', userId: user._id});
         expect(item.title).to.equal('Get ring to Mount Doom');

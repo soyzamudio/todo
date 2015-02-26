@@ -13,7 +13,7 @@ module.exports = {
     Item.findById(request.params.itemId, function(err, item) {
       item.isCompleted = !item.isCompleted;
       item.save(function() {
-        reply.redirect('/items');
+        reply.redirect('/');
       });
     });
   }

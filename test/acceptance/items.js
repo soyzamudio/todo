@@ -10,7 +10,7 @@ var describe = lab.describe;
 var it = lab.it;
 var beforeEach = lab.beforeEach;
 var server = require('../../server/index');
-var cp = require('child_process')
+var cp = require('child_process');
 var dbname = process.env.MONGO_URL.split('/')[3];
 
 var cookie;
@@ -67,7 +67,7 @@ describe('items route', function() {
       };
       server.inject(options, function(response) {
         expect(response.statusCode).to.equal(302);
-        expect(response.headers.location).to.equal('/items');
+        expect(response.headers.location).to.equal('/');
         done();
       });
     });
@@ -125,7 +125,7 @@ describe('items route', function() {
       };
       server.inject(options, function(response) {
         expect(response.statusCode).to.equal(302);
-        expect(response.headers.location).to.equal('/items');
+        expect(response.headers.location).to.equal('/');
         done();
       });
     });

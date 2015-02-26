@@ -1,21 +1,63 @@
 extends ../../layouts/master
 block content
-  .col-md-2
-  .col-md-8
+  .col-md-1
+  .col-md-10
     .col-md-12.input-area
-      form.form-inline
+      form.form-inline(method='post', action='/items/create')
+        .form-group.input-group.input-group-lg(style="width: 100%;")
+          input#item-form.form-control(type='text', name='title', placeholder='Item to add')
         .form-group.input-group.input-group-md(style="width: 100%;")
-          input#item-form.form-control(type='text', name='title', placeholder='Item to add', style='width: 65%')
-          input#tags-form.form-control(type='text', name='tags', placeholder='Comma separated tags', style='width: 35%')
+          input#tags-form.form-control(type='text', name='tags', placeholder='Tags for item')
+          input#date-form.form-control(type='date', name='dueDate')
+          select#priority-form.form-control(name='priority')
+            option(value='') Priority
+            option(value='high') High
+            option(value='medium') Medium
+            option(value='low') Low
           div.input-group-btn
             button#add-to-list.btn.btn-default.form-control: i.fa.fa-pencil-square-o
+    .col-md-12.filter-area
+      .col-md-6.text-left
+        a.btn.btn-default(href='/') Reset
+      .col-md-6.text-right
+        a.btn.btn-default.btn-sm(href='/' + paginate(search) + changeNumber(skip, -5)): span(style='font-size: 2em;') &laquo;
+        a.btn.btn-default.btn-sm(href='/' + paginate(search) + changeNumber(skip, 5)): span(style='font-size: 2em;') &raquo;
+    .col-md-12.item-headers
+      .col-md-8 Message
+      .col-md-2.text-center
+        a(href='/' + sorting(search) + '-dueDate') Date
+      .col-md-1.text-center
+        a(href='/' + sorting(search) + 'priority') Priority
+      .col-md-1.text-center
+        a(href='/' + sorting(search) + 'isCompleted') Done
     .col-md-12.item-area
       each item in items
-        p= item.title
-        p= 'Priority: ' + item.priority
-        p= 'Tags: ' + item.tags
-        if item.isCompleted
-          p Completed: completed
-        else
-          p Completed: not completed
-  .col-md-2
+        .col-md-12.item-info
+          .col-md-8.title= item.title
+          .col-md-2.dueDate= moment(item.dueDate).format("MMM Do, YYYY")
+          if item.priority === 'high'
+            .col-md-1.priority.high: span.fa.fa-exclamation: span.fa.fa-exclamation: span.fa.fa-exclamation
+          if item.priority === 'medium'
+            .col-md-1.priority.medium: span.fa.fa-exclamation: span.fa.fa-exclamation
+          if item.priority === 'low'
+            .col-md-1.priority.low: span.fa.fa-exclamation
+          form(method='post', action='/items/#{item._id}/completed')
+            if item.isCompleted 
+              .col-md-1.completed
+                button(type='submit'): i.fa.fa-check
+            else
+              .col-md-1.not-completed
+                button(type='submit'): i.fa.fa-times
+        .col-md-12.item-tags.item-tags-hidden
+          each tag in item.tags
+            span.tag.label.label-primary: a(href='?filter=tags&value=' + tag)= tag
+  .col-md-1
+  
+  
+  
+  
+  
+  
+  
+  
+  

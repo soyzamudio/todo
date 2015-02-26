@@ -2,7 +2,6 @@
 
 var Item = require('../../models/item');
 var User = require('../../models/user');
-var _ = require('lodash');
 
 module.exports = {
   handler: function(request, reply) {
@@ -12,9 +11,9 @@ module.exports = {
     var sort = request.query.sort;
     delete request.query.page;
     delete request.query.limit;
-    delete request.query.sort
+    delete request.query.sort;
     Item.find(request.query).sort(sort).limit(limit).skip(page).exec(function(err, items) {
       reply.view('templates/items/index', {items:items});
-    })
+    });
   }
 };
